@@ -13,6 +13,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes, withHashLocation()),
     provideHttpClient(),
     provideNgxMask(),
-    importProvidersFrom(BrowserAnimationsModule), // IMPORTANTE PARA ANIMAÇÕES
+    importProvidersFrom(BrowserAnimationsModule),
   ],
 };
