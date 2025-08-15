@@ -15,7 +15,7 @@
         placeholder="Digite seu e-mail..."
       />
     </div>
-    <a href="/cadastrar">Novo Usuário?</a>
+    <a [routerLink]="['/cadastrar']">Novo Usuário</a>
     <div class="form-control">
       <span class="title-form">Senha:</span>
       <input
@@ -27,7 +27,7 @@
         placeholder="Digite sua senha..."
       />
     </div>
-    <a href="/recuperar-senha">Esqueceu a senha?</a>
+    <a [routerLink]="['/recuperar-senha']">Esqueceu a senha?</a>
     <app-botao-login texto="Entrar"></app-botao-login>
   </form>
 

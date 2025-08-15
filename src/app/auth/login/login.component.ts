@@ -1,14 +1,22 @@
 import { Component } from '@angular/core';
 import { BotaoLoginComponent } from '../../components/botao-login/botao-login.component';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { UsuarioService } from '../../services/usuario/usuario.service';
 import { ModalComponent } from '../../components/modal/modal.component';
+import { DashboardRoutingModule } from '../../pages/dashboard/dashboard-routing.module';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule, CommonModule, BotaoLoginComponent, ModalComponent],
+  imports: [
+    FormsModule,
+    CommonModule,
+    BotaoLoginComponent,
+    ModalComponent,
+    DashboardRoutingModule,
+    RouterLink,
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
