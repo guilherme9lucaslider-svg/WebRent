@@ -166,6 +166,13 @@
       <app-botao-login texto="Cadastrar"></app-botao-login>
     </div>
   </form>
+  <div class="background-loading" *ngIf="loading">
+    <div class="modal-loading">
+      <div class="loading" *ngIf="loading">
+        <i class="fa-solid fa-spinner loading"></i>
+      </div>
+    </div>
+  </div>
   <app-modal
     *ngIf="mostrarModal"
     mensagem="{{ mensagemModal }}"

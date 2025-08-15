@@ -30,6 +30,14 @@
     <a href="/recuperar-senha">Esqueceu a senha?</a>
     <app-botao-login texto="Entrar"></app-botao-login>
   </form>
+
+  <div class="background-loading" *ngIf="loading">
+    <div class="modal-loading">
+      <div class="loading" *ngIf="loading">
+        <i class="fa-solid fa-spinner loading"></i>
+      </div>
+    </div>
+  </div>
   <app-modal
     *ngIf="mostrarModal"
     mensagem="{{ mensagemModal }}"

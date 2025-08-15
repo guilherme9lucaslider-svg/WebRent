@@ -43,6 +43,8 @@ export class RegisterComponent {
   tituloModal: string = '';
   mostrarModal: boolean = false;
 
+  loading: boolean = false;
+
   constructor(
     private usuarioService: UsuarioService,
     private router: Router,
@@ -109,6 +111,7 @@ export class RegisterComponent {
   }
 
   enviarFormulario(form: NgForm) {
+    this.loading = true;
     const dataAtual = new Date();
     const nascimento = new Date(this.dataNascimento);
     let idade = dataAtual.getFullYear() - nascimento.getFullYear();
@@ -144,6 +147,7 @@ export class RegisterComponent {
 
     for (let campos of camposObrigatorios) {
       if (form.controls[campos.nome].invalid) {
+        this.loading = false;
         this.mensagemModal = campos.msg;
         this.tituloModal = 'Erro:';
         this.mostrarModal = true;
@@ -152,6 +156,7 @@ export class RegisterComponent {
     }
 
     if (this.senha != this.senhaConfirmada) {
+      this.loading = false;
       this.mensagemModal = 'As senhas estão diferentes, tente novamente!';
       this.tituloModal = 'Erro:';
       this.mostrarModal = true;
@@ -180,11 +185,13 @@ export class RegisterComponent {
         this.mensagemModal = res.message;
         this.tituloModal = 'Sucesso:';
         this.mostrarModal = true;
+        this.loading = false;
       },
       error: (err) => {
         this.mensagemModal = err.error.message;
         this.tituloModal = 'Erro:';
         this.mostrarModal = true;
+        this.loading = false;
       },
     });
   }
@@ -192,7 +199,9 @@ export class RegisterComponent {
   fecharModal() {
     if (this.mensagemModal == 'Usuário criado com sucesso!') {
       this.router.navigate(['/dashboard']);
+      this.loading = false;
     }
     this.mostrarModal = false;
+    this.loading = false;
   }
 }

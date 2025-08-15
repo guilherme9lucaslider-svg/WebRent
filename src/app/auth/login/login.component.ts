@@ -23,7 +23,10 @@ export class LoginComponent {
   tituloModal: string = '';
   mostrarModal: boolean = false;
 
+  loading: boolean = false;
+
   logar(form: NgForm) {
+    this.loading = true;
     sessionStorage.removeItem('notificacoesExibidas');
 
     const camposObrigatorios = [
@@ -52,11 +55,13 @@ export class LoginComponent {
         this.mensagemModal = res.message;
         this.mostrarModal = true;
         this.logado = true;
+        this.loading = false;
       },
       error: (err) => {
         this.tituloModal = 'Erro:';
         this.mensagemModal = err.error.message;
         this.mostrarModal = true;
+        this.loading = false;
       },
     });
   }
