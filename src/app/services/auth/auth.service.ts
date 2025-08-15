@@ -37,8 +37,4 @@ export class AuthService {
         this.router.navigate(['/login']);
       });
   }
-
-  salvarToken(token: string): void {
-    localStorage.setItem(this.TOKEN_KEY, token);
-  }
 }

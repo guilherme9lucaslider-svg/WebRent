@@ -94,7 +94,7 @@ ng serve
 
 # Acesse o aplicativo em:
 
-http://localhost:4200
+https://allesonsales.github.io/AlugAi/login
 
 # Redes sociais:
 
