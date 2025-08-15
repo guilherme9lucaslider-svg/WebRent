@@ -1,59 +1,101 @@
-# Frontend
+# AlugAi
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
+![Logo do projeto](public/Mockup.png)
 
-## Development server
+AlugAi é um aplicativo PWA (Progressive Web App) para gestão de aluguéis, desenvolvido para que proprietários e administradores de imóveis possam gerenciar contratos, unidades, moradores e pagamentos de forma prática e eficiente. Com ele, é possível acompanhar a receita de cada imóvel, receber notificações de vencimentos próximos e gerar contratos automaticamente.
 
-To start a local development server, run:
+O projeto surgiu para solucionar um problema real: facilitar a gestão dos apartamentos de aluguel da minha família, tornando o controle financeiro e administrativo mais simples e organizado.
 
-```bash
+Acessar: [Protótipo-Figma](https://www.figma.com/proto/mQrRyC6pyGmUaRNn8OqoSF/Untitled?node-id=1-2&t=bZ73T1F2QBSgqHsz-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=15%3A1109)
+
+![Potótipo](public/prototipo.png)
+
+## Problemática
+
+Meu pai, no auge dos seus 70 anos, enfrentava alguns desafios na gestão de seus aluguéis. Criar contratos para cada novo inquilino e controlar os pagamentos era cada vez mais complicado, especialmente com computadores antigos em casa. Pensando em simplificar esse processo e oferecer uma solução prática, surgiu a ideia de criar um aplicativo que não apenas gerasse contratos, mas também permitisse a gestão completa dos aluguéis. Assim nasceu o AlugAi.
+
+## Funcionalidades
+
+✅ Registro de pagamentos de aluguel
+
+✅ Cadastro de imóveis, unidades e moradores
+
+✅ Busca de endereço automaticamente
+
+✅ Histórico de moradores antigos
+
+✅ Geração automática de contratos
+
+✅ Envio de mensagens via aplicativo para moradores
+
+✅ Controle da receita: valor recebido em aluguéis e valores perdidos por unidades desocupadas
+
+✅ Notificações de aluguéis e contratos próximos do vencimento
+
+✅ Reajuste automático de aluguéis
+
+## Tecnologias Utilizadas
+
+### Frontend:
+
+- HTML
+- CSS
+- Typescript
+- Angular
+- Angular Animations
+
+### Backend:
+
+- Node.js
+- Express
+- JWT
+- Cookie-parser
+- Estrutura MVC (Programação Orientada a Objetos)
+
+### Banco de Dados:
+
+- SQL
+- DBEaver
+- Sequelize (com práticas para evitar injeção de SQL)
+
+### Próximos passos
+
+- Integrar a geração de boleto com a API do mercado pago
+- Atualizar automaticamente os pagamentos
+- Permitir o login com conta google
+
+---
+
+### Instalação
+
+### Clonar o repositório
+
+git clone https://github.com/seu-usuario/alugai.git
+
+### Instalar dependências no backend
+
+cd alugai/backend
+npm install
+
+### Instalar dependências no frontend
+
+cd ../frontend
+npm install
+
+### Como Usar
+
+### Inicie o backend:
+
+npm run start
+
+### Inicie o frontend:
+
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+# Acesse o aplicativo em:
 
-## Code scaffolding
+http://localhost:4200
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+# Redes sociais:
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+[LinkedIn](https://www.linkedin.com/in/allesonsales/)
