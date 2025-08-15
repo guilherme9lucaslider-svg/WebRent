@@ -11,6 +11,7 @@ import { UsuarioService } from '../../services/usuario/usuario.service';
 import { NgxMaskDirective } from 'ngx-mask';
 import { ModalSenhaComponent } from './modal-senha/modal-senha.component';
 import { CepService } from '../../services/cep/cep.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-config',
@@ -28,7 +29,7 @@ import { CepService } from '../../services/cep/cep.service';
   styleUrl: './config.component.scss',
 })
 export class ConfigComponent implements OnInit {
-  api = 'http://localhost:3000';
+  private api = environment.apiUrl;
 
   descontoAntecipado = false;
 

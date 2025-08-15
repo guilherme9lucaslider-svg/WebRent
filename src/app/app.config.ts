@@ -10,7 +10,7 @@ import { withHashLocation } from '@angular/router';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes, withHashLocation()),
+    provideRouter(routes),
     provideHttpClient(),
     provideNgxMask(),
     importProvidersFrom(BrowserAnimationsModule),

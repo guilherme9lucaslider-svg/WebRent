@@ -10,6 +10,7 @@ import { ModalComponent } from '../../components/modal/modal.component';
 import { MoradorService } from '../../services/morador/morador.service';
 import { Location } from '@angular/common';
 import { BotaoCancelarComponent } from '../../components/botao-cancelar/botao-cancelar.component';
+import { environment } from '../../../environments/environment';
 
 interface Imovel {
   id: number;
@@ -40,7 +41,7 @@ interface Unidade {
   styleUrl: './cadastrar-morador.component.scss',
 })
 export class CadastrarMoradorComponent implements OnInit {
-  endereco = 'http://localhost:3000';
+  private api = environment.apiUrl;
 
   nome: string = '';
   dataNascimento: string = '';
