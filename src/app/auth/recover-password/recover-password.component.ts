@@ -39,7 +39,7 @@ export class RecoverPasswordComponent {
       },
       error: (err) => {
         console.error(err);
-        this.mensagemModal = err.message;
+        this.mensagemModal = err.error.message;
         this.mostrarModal = true;
       },
     });

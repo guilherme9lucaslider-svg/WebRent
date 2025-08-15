@@ -189,7 +189,7 @@ export class ApartamentoComponent implements OnInit {
           this.loading = false;
         },
         error: (err) => {
-          this.mensagemModal = err.message;
+          this.mensagemModal = err.error.message;
           this.tituloModal = 'Erro:';
           this.mostrarModal = true;
           this.loading = false;
@@ -207,7 +207,7 @@ export class ApartamentoComponent implements OnInit {
         this.mostrarModal = true;
       },
       error: (err) => {
-        this.mensagemModal = err.message;
+        this.mensagemModal = err.error.message;
         this.tituloModal = 'Erro';
         this.mostrarModal = true;
       },

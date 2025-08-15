@@ -182,7 +182,7 @@ export class RegisterComponent {
         this.mostrarModal = true;
       },
       error: (err) => {
-        this.mensagemModal = err.message;
+        this.mensagemModal = err.error.message;
         this.tituloModal = 'Erro:';
         this.mostrarModal = true;
       },

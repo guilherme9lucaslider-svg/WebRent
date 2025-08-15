@@ -82,7 +82,7 @@ export class EnviarBoletoComponent implements OnInit {
         this.loading = false;
       },
       error: (err) => {
-        this.modalMensagem = `Erro ao enviar boleto  ${err.message}`;
+        this.modalMensagem = `Erro ao enviar boleto!`;
         this.tituloMensagem = 'Erro:';
         this.mostrarModal = true;
       },

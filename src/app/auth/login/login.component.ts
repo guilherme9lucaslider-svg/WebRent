@@ -55,7 +55,7 @@ export class LoginComponent {
       },
       error: (err) => {
         this.tituloModal = 'Erro:';
-        this.mensagemModal = err.message;
+        this.mensagemModal = err.error.message;
         this.mostrarModal = true;
       },
     });

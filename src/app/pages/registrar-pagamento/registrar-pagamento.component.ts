@@ -186,7 +186,7 @@ export class RegistrarPagamentoComponent implements OnInit {
         this.mostrarModal = true;
       },
       error: (err) => {
-        this.modalMensagem = err.message;
+        this.modalMensagem = err.error.message;
         this.tituloModal = 'Erro:';
         this.mostrarModal = true;
         this.loading = false;
