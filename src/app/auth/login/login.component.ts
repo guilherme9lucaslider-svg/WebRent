@@ -76,12 +76,19 @@ export class LoginComponent {
 
   fecharModal() {
     if (this.logado) {
+      this.mostrarModal = false;
+      this.router.navigate(['/dashboard']);
+    } else {
+      this.mostrarModal = false;
+    }
+  }
+
+  fecharPorTempo() {
+    if (this.logado) {
       setTimeout(() => {
         this.mostrarModal = false;
         this.router.navigate(['/dashboard']);
       }, 2000);
-    } else {
-      this.mostrarModal = false;
     }
   }
 }
