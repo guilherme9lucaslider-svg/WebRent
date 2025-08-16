@@ -89,6 +89,7 @@ export class CadastrarUnidadeComponent implements OnInit {
     if (this.imovelId == null) return;
 
     const imovel = this.imoveis.find((p) => p.imovelId === this.imovelId);
+    console.log(imovel);
 
     if (imovel) {
       this.nomePredio = imovel.nomePredio;
