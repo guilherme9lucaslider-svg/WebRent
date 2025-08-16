@@ -14,7 +14,7 @@ export class AuthService {
   constructor(private router: Router, private http: HttpClient) {}
 
   isAuthenticated(): Observable<boolean> {
-    return this.http.get<boolean>(`${this.api}/usuario/verificar-sessao`, {
+    return this.http.post<boolean>(`${this.api}/usuario/verificar-sessao`, {
       withCredentials: true,
     });
   }
