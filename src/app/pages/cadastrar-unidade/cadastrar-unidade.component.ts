@@ -85,12 +85,14 @@ export class CadastrarUnidadeComponent implements OnInit {
     });
   }
 
-  selecionarImovel(event: Event) {
+  selecionarImovel() {
+    if (this.imovelId == null) return;
+
     const imovel = this.imoveis.find((p) => p.imovelId === this.imovelId);
 
     if (imovel) {
+      this.nomePredio = imovel.nomePredio;
       this.enderecoUnidade = imovel.endereco;
-      this.imovelId = imovel.imovelId;
     }
   }
 
