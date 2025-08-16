@@ -8,13 +8,7 @@ import { MoradorService } from '../../services/morador/morador.service';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [
-    CommonModule,
-    HeadComponent,
-    DashboardRoutingModule,
-    RouterLink,
-    RouterModule,
-  ],
+  imports: [CommonModule, HeadComponent, RouterModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
