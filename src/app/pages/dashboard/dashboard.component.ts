@@ -1,14 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { HeadComponent } from '../../components/head/head.component';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterModule } from '@angular/router';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { MoradorService } from '../../services/morador/morador.service';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, HeadComponent, DashboardRoutingModule],
+  imports: [
+    CommonModule,
+    HeadComponent,
+    DashboardRoutingModule,
+    RouterLink,
+    RouterModule,
+  ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })

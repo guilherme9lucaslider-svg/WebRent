@@ -15,7 +15,7 @@
   </div>
   <div class="dash-container">
     <div class="button-icon" *ngFor="let button of buttons">
-      <a href="{{ button.link }}">
+      <a [routerLink]="button.link">
         <button>
           <i class="{{ button.icone }}"></i>
         </button>
