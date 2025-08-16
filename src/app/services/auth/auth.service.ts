@@ -14,9 +14,13 @@ export class AuthService {
   constructor(private router: Router, private http: HttpClient) {}
 
   isAuthenticated(): Observable<boolean> {
-    return this.http.post<boolean>(`${this.api}/usuario/verificar-sessao`, {
-      withCredentials: true,
-    });
+    return this.http.post<boolean>(
+      `${this.api}/usuario/verificar-sessao`,
+      {},
+      {
+        withCredentials: true,
+      }
+    );
   }
 
   buscarUsuario(email: string) {
