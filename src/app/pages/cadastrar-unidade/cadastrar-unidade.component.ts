@@ -86,7 +86,7 @@ export class CadastrarUnidadeComponent implements OnInit {
   }
 
   selecionarImovel(event: Event) {
-    const imovel = this.imoveis.find((p) => p.nomePredio === this.nomePredio);
+    const imovel = this.imoveis.find((p) => p.imovelId === this.imovelId);
 
     if (imovel) {
       this.enderecoUnidade = imovel.endereco;
