@@ -160,7 +160,7 @@ export class CadastrarUnidadeComponent implements OnInit {
     }
 
     const dados: any = {
-      nomePredio: this.nomePredio,
+      imovelId: this.imovelId,
       numeroUnidade: this.numeroUnidade,
       valorAluguel: this.valorAluguel,
       comodos: this.comodos,

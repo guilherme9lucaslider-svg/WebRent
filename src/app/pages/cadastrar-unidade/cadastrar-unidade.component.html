@@ -21,14 +21,9 @@
       <label for="predio" class="title-form"
         >Selecione o imóvel para adicionar a unidade:</label
       >
-      <select
-        name="nomePredio"
-        id="predio"
-        (change)="(imovelId); selecionarImovel($event)"
-        [(ngModel)]="nomePredio"
-      >
+      <select name="nomePredio" id="predio" [(ngModel)]="imovelId">
         <option value="" disabled selected>Selecione um imóvel</option>
-        <option *ngFor="let imovel of imoveis" value="{{ imovel.nomePredio }}">
+        <option *ngFor="let imovel of imoveis" value="{{ imovelId }}">
           {{ imovel.nomePredio }}
         </option>
       </select>
