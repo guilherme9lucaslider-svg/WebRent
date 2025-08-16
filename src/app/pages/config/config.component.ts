@@ -109,7 +109,6 @@ export class ConfigComponent implements OnInit {
   buscarUsuario() {
     this.usuarioService.buscarUsuario(this.id).subscribe({
       next: (data: any) => {
-        console.log(data);
         this.nome = data.nome;
         this.rg = data.rg;
         this.cpf = data.cpf;

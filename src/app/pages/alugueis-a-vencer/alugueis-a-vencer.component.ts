@@ -73,7 +73,6 @@ export class AlugueisAVencerComponent implements OnInit {
   buscarImoveis() {
     this.moradorService.listarImoveis().subscribe({
       next: (data) => {
-        console.log('Imóveis: ', data);
         this.imoveis = data;
       },
       error: (err) => {

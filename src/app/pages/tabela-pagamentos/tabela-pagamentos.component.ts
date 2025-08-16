@@ -76,7 +76,6 @@ export class TabelaPagamentosComponent implements OnInit {
     this.moradorService.listarPagamentos(this.moradorId).subscribe({
       next: (data: Pagamento[]) => {
         this.historicoPagamentos = data;
-        console.log(data);
 
         if (this.historicoPagamentos.length === 0) {
           this.pagamentoFiltrado = [];

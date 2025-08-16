@@ -154,7 +154,6 @@ export class ApartamentoComponent implements OnInit {
   }
 
   verificarContrato() {
-    console.log('fim contrato: ', this.fimContrato);
     if (!this.fimContrato) return;
 
     const dataAtual = new Date();

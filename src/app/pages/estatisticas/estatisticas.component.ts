@@ -58,8 +58,6 @@ export class EstatisticasComponent implements OnInit {
           (total, pagamento: any) => total + pagamento.valor,
           0
         );
-        console.log('Pagos ', this.pagamentos);
-        console.log('Pagos mês atual ', this.pagamentosMesAtual);
       },
     });
   }
@@ -71,7 +69,6 @@ export class EstatisticasComponent implements OnInit {
 
     this.moradorService.listarImoveis().subscribe({
       next: (data) => {
-        console.log(data);
         this.unidades = data.map((imovel: any) => imovel.Unidades).flat();
         this.totalUnidades = this.unidades.length;
 

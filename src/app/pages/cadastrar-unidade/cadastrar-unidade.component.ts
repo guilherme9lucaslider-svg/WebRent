@@ -159,27 +159,31 @@ export class CadastrarUnidadeComponent implements OnInit {
       return;
     }
 
-    const dados = {
+    const dados: any = {
       nomePredio: this.nomePredio,
       numeroUnidade: this.numeroUnidade,
       valorAluguel: this.valorAluguel,
       comodos: this.comodos,
       ocupada: this.ocupada,
-      morador: this.morador,
-      dataNascimento: new Date(this.dataNascimento).toISOString().slice(0, 10),
-      rg: rgLimpo,
-      cpf: cpfLimpo,
-      dataInicioContrato: new Date(this.dataInicioContrato)
-        .toISOString()
-        .slice(0, 10),
-      dataFimContrato: new Date(this.dataFimContrato)
-        .toISOString()
-        .slice(0, 10),
-      diaVencimento: this.diaVencimento,
-      telefone: telefoneLimpo,
-      email: this.email,
-      imovelId: this.imovelId,
     };
+    if (this.ocupada) {
+      dados.morador = this.morador;
+      dados.dataNascimento = new Date(this.dataNascimento)
+        .toISOString()
+        .slice(0, 10);
+      dados.rg = rgLimpo;
+      dados.cpf = cpfLimpo;
+      dados.dataInicioContrato = new Date(this.dataInicioContrato)
+        .toISOString()
+        .slice(0, 10);
+      dados.dataFimContrato = new Date(this.dataFimContrato)
+        .toISOString()
+        .slice(0, 10);
+      dados.diaVencimento = this.diaVencimento;
+      dados.telefone = telefoneLimpo;
+      dados.email = this.email;
+      dados.imovelId = this.imovelId;
+    }
 
     this.moradorService.cadastrarUnidade(dados).subscribe({
       next: (res: any) => {
@@ -214,7 +218,6 @@ export class CadastrarUnidadeComponent implements OnInit {
   }
 
   cancelar() {
-    console.log('Cancelou!');
     this.imovelId = null;
   }
 }
