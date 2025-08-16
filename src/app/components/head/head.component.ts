@@ -43,7 +43,7 @@ interface Notificacao {
   ],
 })
 export class HeadComponent implements OnInit {
-  diasAviso: number | null = 35;
+  diasAviso: number | null = 5;
   notificacoes: Notificacao[] = [];
   totalNotificacoes: number = 0;
 

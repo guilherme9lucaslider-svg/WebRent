@@ -41,6 +41,7 @@
   <app-modal
     *ngIf="mostrarModal"
     mensagem="{{ mensagemModal }}"
+    git
     titulo="{{ tituloModal }}"
     (fechar)="fecharModal()"
     (aberto)="fecharPorTempo()"

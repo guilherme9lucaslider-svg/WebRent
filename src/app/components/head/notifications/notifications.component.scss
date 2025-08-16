@@ -25,6 +25,7 @@
     flex-direction: column;
     justify-content: flex-start;
     height: 100%;
+    width: 100%;
 
     li {
       margin-top: 1rem;
@@ -36,6 +37,8 @@
       padding-bottom: 1rem;
       border-bottom: solid 1px $color-principal-opacity;
       margin-left: -2rem;
+      width: 100%;
+      cursor: pointer;
 
       i {
         font-size: 1.5rem;

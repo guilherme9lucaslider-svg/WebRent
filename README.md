@@ -64,6 +64,15 @@ Meu pai, no auge dos seus 70 anos, enfrentava alguns desafios na gestão de seus
 - Atualizar automaticamente os pagamentos
 - Permitir o login com conta google
 
+## Acesse o aplicativo em:
+
+- [Projeto](https://allesonsales.github.io/alugai)
+- [Backend](https://github.com/allesonsales/AlugAi-BE)
+
+## Redes sociais:
+
+[LinkedIn](https://www.linkedin.com/in/allesonsales/)
+
 ---
 
 ### Instalação
@@ -91,12 +100,3 @@ npm run start
 ### Inicie o frontend:
 
 ng serve
-
-# Acesse o aplicativo em:
-
-[Projeto](https://allesonsales.github.io/alugai)
-[Backend](https://github.com/allesonsales/AlugAi-BE)
-
-# Redes sociais:
-
-[LinkedIn](https://www.linkedin.com/in/allesonsales/)
