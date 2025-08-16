@@ -22,8 +22,11 @@
     <div class="alugadas">
       <div class="total-unidades">
         <i class="fa-regular fa-face-smile"></i>
-        <small class="title-form"
+        <small class="title-form" *ngIf="alugadas.length > 1"
           >{{ alugadas.length }} unidades alugadas</small
+        >
+        <small class="title-form" *ngIf="alugadas.length == 1"
+          >{{ alugadas.length }} 1 unidade alugada</small
         >
       </div>
       <div class="total-receber">
@@ -36,7 +39,12 @@
     <div class="vazias">
       <div class="total-unidades">
         <i class="fa-regular fa-face-frown"></i>
-        <small class="title-form">{{ vazias.length }} unidades vazias</small>
+        <small class="title-form" *ngIf="vazias.length > 1"
+          >{{ vazias.length }} unidades vazias</small
+        >
+        <small class="title-form" *ngIf="vazias.length == 1"
+          >{{ vazias.length }} 1 unidade vazia</small
+        >
       </div>
       <div class="total-receber">
         <small class="text-link"> Receita perdida por unidades vazias: </small>
