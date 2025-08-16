@@ -94,7 +94,8 @@ ng serve
 
 # Acesse o aplicativo em:
 
-https://allesonsales.github.io/AlugAi/login
+[Projeto](https://allesonsales.github.io/alugai)
+[Backend](https://github.com/allesonsales/AlugAi-BE)
 
 # Redes sociais:
 
