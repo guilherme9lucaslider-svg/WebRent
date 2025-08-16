@@ -85,16 +85,17 @@ export class CadastrarUnidadeComponent implements OnInit {
     });
   }
 
-  selecionarImovel() {
-    if (this.imovelId == null) return;
-
-    const imovel = this.imoveis.find((p) => p.imovelId === this.imovelId);
-    console.log(imovel);
+  selecionarImovel(event: Event) {
+    const imovel = this.imoveis.find(
+      (p) => p.imovelId === Number(this.imovelId)
+    );
 
     if (imovel) {
-      this.nomePredio = imovel.nomePredio;
       this.enderecoUnidade = imovel.endereco;
+      this.imovelId = imovel.imovelId;
     }
+
+    console.log('imovel: ', imovel);
   }
 
   enviarFormulario(form: NgForm) {

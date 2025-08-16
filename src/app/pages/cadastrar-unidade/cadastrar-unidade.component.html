@@ -24,7 +24,7 @@
       <select
         name="nomePredio"
         id="predio"
-        (change)="selecionarImovel()"
+        (change)="selecionarImovel($event)"
         [(ngModel)]="imovelId"
       >
         <option value="" disabled selected>Selecione um imóvel</option>
