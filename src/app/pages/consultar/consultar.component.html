@@ -4,9 +4,6 @@
 ></app-head>
 
 <section>
-  <div class="loading" *ngIf="loading">
-    <i class="fa-solid fa-spinner loading"></i>
-  </div>
   <div class="aviso-container" *ngIf="imoveis.length == 0 && !loading">
     <ng-container>
       <small class="aviso title-form"
@@ -119,4 +116,11 @@
     (clicado)="irParaUnidade()"
     *ngIf="unidades.length > 0"
   ></app-botao-adicionar>
+  <div class="background-loading" *ngIf="loading">
+    <div class="modal-loading">
+      <div class="loading" *ngIf="loading">
+        <i class="fa-solid fa-spinner loading"></i>
+      </div>
+    </div>
+  </div>
 </section>

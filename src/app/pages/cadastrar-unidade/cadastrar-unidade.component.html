@@ -3,9 +3,6 @@
   (voltar)="imovelId ? cancelar() : voltar()"
 ></app-head>
 <section>
-  <div class="loading" *ngIf="loading">
-    <i class="fa-solid fa-spinner loading"></i>
-  </div>
   <div class="aviso-container" *ngIf="imoveis.length == 0 && !loading">
     <ng-container>
       <small class="aviso title-form"
@@ -86,7 +83,7 @@
             aria-label="valorAluguel"
             id="valorAluguel"
             name="valorAluguel"
-            placeholder="Valor do aluguel"
+            placeholder="Valor aluguel"
             [(ngModel)]="valorAluguel"
             required
           />
@@ -98,6 +95,38 @@
             name="comodos"
             [(ngModel)]="comodos"
             placeholder="Nº de Cômodos"
+          />
+        </div>
+      </div>
+      <div class="form-container">
+        <div class="form-control">
+          <label for="instalacaoLuz" class="title-form"
+            >Nº Relógio de luz:</label
+          >
+          <input
+            type="text"
+            inputmode="numeric"
+            maxlength="12"
+            name="instalacaoLuz"
+            id="instalacaoLuz"
+            pattern="[0-9]*"
+            placeholder="Apenas números"
+            [(ngModel)]="instalacaoLuz"
+          />
+        </div>
+        <div class="form-control">
+          <label for="instalacaoAgua" class="title-form"
+            >Nº Relógio de água:</label
+          >
+          <input
+            type="text"
+            inputmode="numeric"
+            maxlength="12"
+            name="instalacaoAgua"
+            id="instalacaoAgua"
+            pattern="[0-9]*"
+            placeholder="Apenas números"
+            [(ngModel)]="instalacaoAgua"
           />
         </div>
       </div>
@@ -162,7 +191,7 @@
               type="string"
               name="rg"
               id="rg"
-              mask="00.000.000-0"
+              maxlength="9"
               [(ngModel)]="rg"
             />
           </div>
@@ -229,13 +258,7 @@
           </div>
           <div class="form-control">
             <label for="email" class="title-form">E-mail:</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              [(ngModel)]="email"
-              required
-            />
+            <input type="email" name="email" id="email" [(ngModel)]="email" />
           </div>
         </div>
       </div>
@@ -249,6 +272,13 @@
       </div>
     </div>
   </form>
+  <div class="background-loading" *ngIf="loading">
+    <div class="modal-loading">
+      <div class="loading" *ngIf="loading">
+        <i class="fa-solid fa-spinner loading"></i>
+      </div>
+    </div>
+  </div>
   <app-modal
     *ngIf="mostrarModal"
     mensagem="{{ mensagemModal }}"

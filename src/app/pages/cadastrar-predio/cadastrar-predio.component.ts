@@ -40,6 +40,8 @@ export class CadastrarPredioComponent implements OnInit {
   tituloModal: string = '';
   mensagemModal: string = '';
 
+  loading: boolean = false;
+
   constructor(
     private http: HttpClient,
     private router: Router,

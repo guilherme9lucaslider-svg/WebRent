@@ -47,6 +47,7 @@ export class EstatisticasComponent implements OnInit {
     if (!this.pagamentosMesAtual) return;
     this.moradorService.listarTodosPagamentos().subscribe({
       next: (data) => {
+        console.log(data);
         this.pagamentos = data.filter(
           (pagamento: any) => pagamento.status == 'Pago'
         );

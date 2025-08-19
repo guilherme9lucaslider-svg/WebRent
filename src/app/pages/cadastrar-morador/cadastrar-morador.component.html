@@ -9,9 +9,6 @@
   (voltar)="cancelar()"
 ></app-head>
 <section>
-  <div class="loading" *ngIf="loading">
-    <i class="fa-solid fa-spinner loading"></i>
-  </div>
   <div class="aviso-container" *ngIf="imoveis.length == 0 && !loading">
     <ng-container>
       <small class="aviso title-form"
@@ -140,7 +137,6 @@
             type="text"
             name="rg"
             id="rg"
-            mask="00.000.000-0"
             maxlength="12"
             [(ngModel)]="rg"
           />
@@ -206,6 +202,13 @@
       </div>
     </div>
   </form>
+  <div class="background-loading" *ngIf="loading">
+    <div class="modal-loading">
+      <div class="loading" *ngIf="loading">
+        <i class="fa-solid fa-spinner loading"></i>
+      </div>
+    </div>
+  </div>
   <app-modal
     *ngIf="mostrarModal"
     mensagem="{{ mensagemModal }}"

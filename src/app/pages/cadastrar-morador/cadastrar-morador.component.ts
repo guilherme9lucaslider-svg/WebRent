@@ -81,6 +81,7 @@ export class CadastrarMoradorComponent implements OnInit {
   }
 
   buscarImoveis() {
+    this.loading = true;
     this.moradorService.listarImoveis().subscribe({
       next: (data) => {
         this.imoveis = data
@@ -92,7 +93,12 @@ export class CadastrarMoradorComponent implements OnInit {
           .sort((a: any, b: any) => a.nomePredio.localeCompare(b.nomePredio));
         this.loading = false;
       },
-      error: (err) => console.error(err),
+      error: (err) => {
+        this.mensagemModal = err.error.message;
+        this.mostrarModal = true;
+        this.loading = false;
+        console.error(err);
+      },
     });
   }
 
@@ -235,6 +241,7 @@ export class CadastrarMoradorComponent implements OnInit {
         this.mensagemModal = 'Morador cadastrado com sucesso!';
         this.tituloModal = 'Sucesso:';
         this.mostrarModal = true;
+        this.loading = false;
 
         this.moradorService.criarContrato(dados).subscribe({
           error: (err) => {
@@ -243,6 +250,7 @@ export class CadastrarMoradorComponent implements OnInit {
         });
       },
       error: (err: any) => {
+        console.error(err);
         this.mensagemModal = err.error.message;
         this.tituloModal = 'Erro:';
         this.mostrarModal = true;

@@ -34,14 +34,18 @@ interface Imovel {
   styleUrl: './cadastrar-unidade.component.scss',
 })
 export class CadastrarUnidadeComponent implements OnInit {
+  imovelId: number | null = null;
   nomePredio: string = '';
   enderecoUnidade: string = '';
   numeroUnidade: number | null = null;
-  comodos: number | null = null;
   valorAluguel: number | null = null;
-  diaVencimento: number | null = null;
+  comodos: number | null = null;
+  instalacaoLuz: number | null = null;
+  instalacaoAgua: number | null = null;
   ocupada: boolean = false;
+
   morador: string = '';
+  diaVencimento: number | null = null;
   dataNascimento: string = '';
   rg: string = '';
   cpf: string = '';
@@ -49,7 +53,6 @@ export class CadastrarUnidadeComponent implements OnInit {
   dataFimContrato: string = '';
   telefone: string = '';
   email: string = '';
-  imovelId: number | null = null;
 
   mensagemModal: string = '';
   tituloModal: string = '';
@@ -129,8 +132,15 @@ export class CadastrarUnidadeComponent implements OnInit {
           nome: 'dataInicioContrato',
           msg: 'Selecione a data de inicio do contrato!',
         },
-        { nome: 'telefone', msg: 'Digite o número de telefone do morador!' },
-        { nome: 'email', msg: 'Digite o e-mail do morador!' }
+        {
+          nome: 'instalacaoAgua',
+          msg: 'Digite uma instalação de água válida!',
+        },
+        {
+          nome: 'instalacaoLuz',
+          msg: 'Digite uma instalação de luz válida!',
+        },
+        { nome: 'telefone', msg: 'Digite o número de telefone do morador!' }
       );
       if (
         this.diaVencimento == null ||
@@ -167,9 +177,12 @@ export class CadastrarUnidadeComponent implements OnInit {
       imovelId: this.imovelId,
       numeroUnidade: this.numeroUnidade,
       valorAluguel: this.valorAluguel,
+      instalacaoAgua: this.instalacaoAgua,
+      instalacaoLuz: this.instalacaoLuz,
       comodos: this.comodos,
       ocupada: this.ocupada,
     };
+
     if (this.ocupada) {
       dados.morador = this.morador;
       dados.dataNascimento = new Date(this.dataNascimento)

@@ -42,8 +42,6 @@ export class ConsultarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loading = true;
-
     this.moradorService.listarImoveis().subscribe({
       next: (data) => {
         this.imoveis = data
@@ -70,11 +68,16 @@ export class ConsultarComponent implements OnInit {
   imovelSelecionadoNome: string = '';
   unidadeSelecionada: number | null = null;
   pesquisa: string = '';
+
   loading: boolean = false;
 
   imoveis: Imovel[] = [];
   unidades: Unidade[] = [];
   filtrados: Unidade[] = [];
+
+  mensagemModal: string = '';
+  tituloModal: string = '';
+  mostrarModal: boolean = false;
 
   voltar() {
     this.router.navigate(['/dashboard']);
@@ -90,7 +93,11 @@ export class ConsultarComponent implements OnInit {
   }
 
   buscarUnidade() {
-    if (!this.imovelSelecionado) return;
+    this.loading = true;
+    if (!this.imovelSelecionado) {
+      this.loading = false;
+      return;
+    }
 
     this.moradorService.listarUnidades(this.imovelSelecionado).subscribe({
       next: (data) => {
@@ -114,8 +121,15 @@ export class ConsultarComponent implements OnInit {
           .sort((a: any, b: any) => a.numero - b.numero);
 
         this.filtrados = [...this.unidades];
+        this.loading = false;
       },
-      error: (err) => console.error(err),
+      error: (err) => {
+        this.mensagemModal = err.error.message;
+        this.mostrarModal = true;
+        this.tituloModal = 'Erro';
+        this.loading = false;
+        console.error(err);
+      },
     });
   }
 

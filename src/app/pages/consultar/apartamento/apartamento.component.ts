@@ -14,7 +14,7 @@ interface Morador {
   rg: string;
   cpf: string;
   dataNascimento: string;
-  email: string;
+  email?: string;
   telefone: string;
   inicioContrato: string;
   fimContrato: string;
@@ -31,6 +31,8 @@ interface Unidade {
   ocupada: boolean;
   valorAluguel: number;
   Moradores: Morador[];
+  instalacaoLuz?: string;
+  instalacaoAgua?: string;
 }
 
 interface MoradorAtual {

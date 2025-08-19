@@ -87,15 +87,15 @@
           </button>
         </div>
       </div>
+      <span
+        ><strong>Dia de pagamento:</strong>
+        {{ moradorAtual?.diaVencimento }}
+      </span>
     </div>
   </div>
   <div class="unidade-container" *ngIf="!verMoradoresAntigos">
     <small>Dados unidade</small>
     <div class="dados-unidade text-list-stats">
-      <span
-        ><strong>Dia de pagamento:</strong>
-        {{ moradorAtual?.diaVencimento }}
-      </span>
       <span
         ><strong>Valor do aluguel:</strong>
         {{ unidade?.valorAluguel | currency : "BRL" }}</span
@@ -107,6 +107,14 @@
       <span>
         <strong> Data fim contrato:</strong>
         {{ moradorAtual?.fimContrato | date : "dd/MM/yyyy" }}
+      </span>
+      <span>
+        <strong>Instalação luz:</strong>
+        {{ unidade?.instalacaoLuz }}
+      </span>
+      <span>
+        <strong>Instalação água:</strong>
+        {{ unidade?.instalacaoAgua }}
       </span>
     </div>
   </div>

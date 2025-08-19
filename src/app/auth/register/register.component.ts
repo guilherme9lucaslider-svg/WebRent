@@ -117,6 +117,7 @@ export class RegisterComponent {
     let idade = dataAtual.getFullYear() - nascimento.getFullYear();
 
     if (idade < 18) {
+      this.loading = false;
       this.mensagemModal =
         'Você precisa ser maior de 18 anos para se cadastrar!';
       this.tituloModal = 'Erro:';
@@ -198,7 +199,7 @@ export class RegisterComponent {
 
   fecharModal() {
     if (this.mensagemModal == 'Usuário criado com sucesso!') {
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/login']);
       this.loading = false;
     }
     this.mostrarModal = false;
