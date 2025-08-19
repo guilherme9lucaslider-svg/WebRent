@@ -76,6 +76,36 @@
           />
         </div>
       </div>
+      <div class="form-container">
+        <div class="form-control">
+          <label for="instalacaoLuz" class="title-form">Instalação luz:</label>
+          <input
+            type="text"
+            inputmode="numeric"
+            maxlength="12"
+            name="instalacaoLuz"
+            id="instalacaoLuz"
+            pattern="[0-9]*"
+            placeholder="Apenas números"
+            [(ngModel)]="instalacaoLuz"
+          />
+        </div>
+        <div class="form-control">
+          <label for="instalacaoAgua" class="title-form"
+            >Instalação água:</label
+          >
+          <input
+            type="text"
+            inputmode="numeric"
+            maxlength="12"
+            name="instalacaoAgua"
+            id="instalacaoAgua"
+            pattern="[0-9]*"
+            placeholder="Apenas números"
+            [(ngModel)]="instalacaoAgua"
+          />
+        </div>
+      </div>
       <div class="form-container" *ngIf="moradorId != null">
         <div class="form-control">
           <label for="dataInicioContrato" class="title-form"

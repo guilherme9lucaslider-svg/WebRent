@@ -45,6 +45,8 @@ export class ConfiguracoesApartamentoComponent implements OnInit {
   telefone: string = '';
   email: string = '';
   valorAluguel: number | null = null;
+  instalacaoAgua: string = '';
+  instalacaoLuz: string = '';
   dataInicioContrato: string = '';
   dataFimContrato: string = '';
   diaVencimento: number | null = null;
@@ -75,6 +77,8 @@ export class ConfiguracoesApartamentoComponent implements OnInit {
           this.unidadeId = data.id;
           this.numeroUnidade = data.numeroUnidade;
           this.valorAluguel = data.valorAluguel;
+          this.instalacaoAgua = data.instalacaoAgua ?? '';
+          this.instalacaoLuz = data.instalacaoLuz ?? '';
           this.nomeMorador = this.moradorAtual?.nome ?? '';
           this.rg = this.formatarRG(this.moradorAtual?.rg ?? '');
           this.cpf = this.formatarCPF(this.moradorAtual?.cpf ?? '');
