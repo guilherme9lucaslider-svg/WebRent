@@ -120,6 +120,8 @@ export class ConfiguracoesApartamentoComponent implements OnInit {
       nome: this.nomeMorador,
       rg: this.rg,
       cpf: this.cpf,
+      instalacaoAgua: this.instalacaoAgua,
+      instalacaoLuz: this.instalacaoLuz,
       telefone: this.telefone,
       email: this.email,
       valorAluguel: this.valorAluguel,
