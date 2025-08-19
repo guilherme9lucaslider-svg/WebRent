@@ -11,20 +11,16 @@
     <small>Dados unidade</small>
     <div class="dados-unidade text-list-stats">
       <span
-        ><strong>Dia de pagamento:</strong>
-        {{ moradorAtual?.diaVencimento }}
-      </span>
-      <span
         ><strong>Valor do aluguel:</strong>
         {{ unidade?.valorAluguel | currency : "BRL" }}</span
       >
       <span>
-        <strong> Data início contrato:</strong>
-        {{ moradorAtual?.inicioContrato | date : "dd/MM/yyyy" }}
+        <strong>Instalação luz:</strong>
+        {{ unidade?.instalacaoLuz }}
       </span>
       <span>
-        <strong> Data fim contrato:</strong>
-        {{ moradorAtual?.fimContrato | date : "dd/MM/yyyy" }}
+        <strong>Instalação água:</strong>
+        {{ unidade?.instalacaoAgua }}
       </span>
     </div>
   </div>
